@@ -1,0 +1,6 @@
+Bank/
+
+# ignore all json because of credentials
+*.json
+
+__pycache__/
