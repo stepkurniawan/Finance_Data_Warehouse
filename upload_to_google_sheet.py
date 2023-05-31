@@ -1,10 +1,43 @@
 import pandas as pd
 import gspread
 import connect_to_google_sheet as connection
+import os
 from gspread_dataframe import set_with_dataframe, get_as_dataframe
 import time
 
+def select_file_to_upload():
+    print("Selecting file to upload...")
+
+    # go to the downloads folder
+    downloads_folder = os.path.join(os.path.expanduser("~"), "OneDrive", "Project", "Finance_Data_Lake", "Bank", "Commerzbank", "Auto_Download_CSV")
+
+    # get all the files in the folder
+    files = os.listdir(downloads_folder)
+
+    if not files:
+        raise FileNotFoundError("No files found in the downloads folder.")
+
+    # Sort the files by date
+    try:
+        files.sort(key=os.path.getmtime)
+    except OSError as e:
+        print(f"Error occurred while sorting files: {e}")
+        
+
+
+    # get the most recent file
+    file = files[-1]
+
+    # get the file path
+    file_path = os.path.join(downloads_folder, file)
+
+    print("File selected!")
+    return file_path
+
+    
+
 def upload_to_google_sheet(file_path, sheet):
+    print("Uploading to Google Sheet...")
     # Read the CSV file into a DataFrame
     df = pd.read_csv(file_path, delimiter=";")
 
@@ -37,3 +70,4 @@ def upload_to_google_sheet(file_path, sheet):
 
     # Add a delay of 1 second between each API call
     time.sleep(1)
+    print("Upload complete!")
