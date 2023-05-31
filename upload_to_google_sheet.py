@@ -5,11 +5,12 @@ import os
 from gspread_dataframe import set_with_dataframe, get_as_dataframe
 import time
 
+downloads_folder = os.path.join(os.path.expanduser("~"), "OneDrive", "Project", "Finance_Data_Lake", "Bank", "Commerzbank", "Auto_Download_CSV")
+upload_tracker_file_path = os.path.join(os.path.expanduser("~"), "OneDrive", "Project", "Finance_Data_Lake", "upload_tracker.txt")
+
+
 def select_file_to_upload():
     print("Selecting file to upload...")
-
-    # go to the downloads folder
-    downloads_folder = os.path.join(os.path.expanduser("~"), "OneDrive", "Project", "Finance_Data_Lake", "Bank", "Commerzbank", "Auto_Download_CSV")
 
     # get all the files in the folder
     files = os.listdir(downloads_folder)
@@ -23,8 +24,6 @@ def select_file_to_upload():
     except OSError as e:
         print(f"Error occurred while sorting files: {e}")
         
-
-
     # get the most recent file
     file = files[-1]
 
@@ -33,6 +32,32 @@ def select_file_to_upload():
 
     print("File selected!")
     return file_path
+
+def update_upload_tracker(file_path):
+    # get the file name
+    file_name = os.path.basename(file_path)
+
+    # append the file name to the upload tracker file
+    with open(upload_tracker_file_path, "a") as f:
+        f.write(file_name + "\n")
+
+    print("Upload tracker updated!")
+
+def check_if_file_already_uploaded(file_path):
+    # get the file name
+    file_name = os.path.basename(file_path)
+
+    # get the upload tracker file path
+
+    # get the list of uploaded files
+    with open(upload_tracker_file_path, "r") as f:
+        uploaded_files = f.read().splitlines()
+
+    # check if the file is in the list of uploaded files
+    if file_name in uploaded_files:
+        return True
+    else:
+        return False
 
     
 

@@ -50,13 +50,17 @@ date_to = last_day_of_previous_month.strftime("%Y-%m-%d")
 # Set the headers
 headers = {
     #authorization base65 encoded
-    "Authorization": config["COMMERZBANK_OAUTH_BASE64"],
+    "Authorization": f"Basic config["COMMERZBANK_OAUTH_BASE64"],
     "Accept": "application/json",
     "Content-Type": "application/json"
-}
+    }
 
 # Set the URL
-url = f"https://psd2.api.commerzbank.com/berlingroup/v1/accounts/{account_id}/transactions?dateFrom={date_from}&dateTo={date_to}"
+# url = f"https://psd2.api.commerzbank.com/berlingroup/v1/accounts/{account_id}/transactions?dateFrom={date_from}&dateTo={date_to}"
+url =   f"https://api-sandbox.commerzbank.com/api_operation HTTP/1.1"
+
+
+
 
 # Get the response
 response = requests.get(url, headers=headers)
