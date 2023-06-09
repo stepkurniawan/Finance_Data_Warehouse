@@ -5,11 +5,16 @@ import os
 from gspread_dataframe import set_with_dataframe, get_as_dataframe
 import time
 
-downloads_folder = os.path.join(os.path.expanduser("~"), "OneDrive", "Project", "Finance_Data_Lake", "Bank", "Commerzbank", "Auto_Download_CSV")
+base_path = os.path.join(os.path.expanduser("~"), "OneDrive", "Project", "Finance_Data_Lake", "Bank")
 upload_tracker_file_path = os.path.join(os.path.expanduser("~"), "OneDrive", "Project", "Finance_Data_Lake", "upload_tracker.txt")
 
+def select_file_to_upload(bank_name):
+    if bank_name == "commerzbank":
+        downloads_folder = os.path.join(base_path, "Commerzbank", "Auto_Download_CSV")
+    elif bank_name == "n26":
+        downloads_folder = os.path.join(base_path, "N26", "Auto_Download_CSV")
 
-def select_file_to_upload():
+    print("The bank is " + bank_name + ".")
     print("Selecting file to upload...")
 
     # get all the files in the folder
@@ -19,18 +24,20 @@ def select_file_to_upload():
         raise FileNotFoundError("No files found in the downloads folder.")
 
     # Sort the files by date
-    try:
-        files.sort(key=os.path.getmtime)
+    try:        
+        sorted_files = sorted(files, key=lambda x: os.path.getmtime(os.path.join(downloads_folder, x)), reverse=True)
     except OSError as e:
+        #TODO STILL Wrong!
         print(f"Error occurred while sorting files: {e}")
+        return None
         
     # get the most recent file
-    file = files[-1]
+    file = sorted_files[0]
 
     # get the file path
     file_path = os.path.join(downloads_folder, file)
 
-    print("File selected!")
+    print("File selected: ", file)
     return file_path
 
 def update_upload_tracker(file_path):
@@ -96,3 +103,21 @@ def upload_to_google_sheet(file_path, sheet):
     # Add a delay of 1 second between each API call
     time.sleep(1)
     print("Upload complete!")
+
+def delete_last_uploaded_file_from_upload_tracker():
+    # get the list of uploaded files
+    with open(upload_tracker_file_path, "r") as f:
+        uploaded_files = f.read().splitlines()
+
+    # get the last uploaded file
+    last_uploaded_file = uploaded_files[-1]
+
+    # remove the last uploaded file from the list
+    uploaded_files.remove(last_uploaded_file)
+
+    # write the list back to the upload tracker file
+    with open(upload_tracker_file_path, "w") as f:
+        for file in uploaded_files:
+            f.write(file + "\n")
+
+    print("Last uploaded file deleted from the upload tracker file.")

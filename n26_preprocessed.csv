@@ -1,0 +1,55 @@
+Timestamp;Payer;Account_Number;Transaction_Type;Descriptions;Price;Price_Foreign;Currency_Code;Exchange_Rate;Category;Payment_Method;Location;Currency
+;From Main Account to My Entertainment;nan;Outgoing Transfer;2x Round-up;-1.0;;nan;;nan;N26;Germany;EUR
+;From Main Account to My Entertainment;nan;Outgoing Transfer;2x Round-up;-1.24;;nan;;nan;N26;Germany;EUR
+;From Main Account to My Entertainment;nan;Outgoing Transfer;2x Round-up;-1.0;;nan;;nan;N26;Germany;EUR
+;From Main Account to My Entertainment;nan;Outgoing Transfer;Monthly Rule;-25.0;;nan;;nan;N26;Germany;EUR
+;From Main Account to Shared entertainment;nan;Outgoing Transfer;Monthly Rule;-100.0;;nan;;nan;N26;Germany;EUR
+;From Main Account to Shared-acc-gro-fun;nan;Outgoing Transfer;Monthly Rule;-100.0;;nan;;nan;N26;Germany;EUR
+;parkeren Zaanse Schans;nan;MasterCard Payment;-;-15.0;-15.0;EUR;1.0;nan;N26;Germany;EUR
+;Zaans Museum;nan;MasterCard Payment;-;-1.0;-1.0;EUR;1.0;nan;N26;Germany;EUR
+;From Main Account to My Entertainment;nan;Outgoing Transfer;2x Round-up;-1.4;;nan;;nan;N26;Germany;EUR
+;From Main Account to My Entertainment;nan;Outgoing Transfer;2x Round-up;-0.86;;nan;;nan;N26;Germany;EUR
+;Fieten Olie Loenen;nan;MasterCard Payment;-;-35.15;-35.15;EUR;1.0;nan;N26;Germany;EUR
+;ALBERT HEIJN 1001;nan;MasterCard Payment;-;-4.38;-4.38;EUR;1.0;nan;N26;Germany;EUR
+;The Bulldog Energy;nan;MasterCard Payment;-;-22.5;-22.5;EUR;1.0;nan;N26;Germany;EUR
+;From Main Account to My Entertainment;nan;Outgoing Transfer;2x Round-up;-1.5;;nan;;nan;N26;Germany;EUR
+;From Main Account to My Entertainment;nan;Outgoing Transfer;2x Round-up;-1.18;;nan;;nan;N26;Germany;EUR
+;Melissa Nathania;DE87100110012626753107;Income;Split the bill request for The Bulldog;7.5;;nan;;nan;N26;Germany;EUR
+;Little Saigon Zeedijk;nan;MasterCard Payment;-;-50.5;-50.5;EUR;1.0;nan;N26;Germany;EUR
+;P-Rokin;nan;MasterCard Payment;-;-24.57;-24.57;EUR;1.0;nan;N26;Germany;EUR
+;Chun Amsterdam;nan;MasterCard Payment;-;-72.3;-72.3;EUR;1.0;nan;N26;Germany;EUR
+;STEPHEN KURNIAWAN;DE06480400350611093600;Income;HAVE FUN;100.0;;nan;;nan;N26;Germany;EUR
+;STEPHEN KURNIAWAN;DE06480400350611093600;Income;MOVE BIT BY BIT;400.0;;nan;;nan;N26;Germany;EUR
+;NH COLLECTION GRAND HO;nan;MasterCard Payment;-;-17.5;-17.5;EUR;1.0;nan;N26;Germany;EUR
+;From Main Account to My Entertainment;nan;Outgoing Transfer;2x Round-up;-0.04;;nan;;nan;N26;Germany;EUR
+;From Main Account to My Entertainment;nan;Outgoing Transfer;2x Round-up;-1.2;;nan;;nan;N26;Germany;EUR
+;From Main Account to My Entertainment;nan;Outgoing Transfer;2x Round-up;-1.2;;nan;;nan;N26;Germany;EUR
+;Aral Station 212007108;nan;MasterCard Payment;-;-25.25;-25.25;EUR;1.0;nan;N26;Germany;EUR
+;UZR*Waxys Irish Pub Wa;nan;MasterCard Payment;-;-7.4;-7.4;EUR;1.0;nan;N26;Germany;EUR
+;UZR*Waxys Irish Pub Wa;nan;MasterCard Payment;-;-7.4;-7.4;EUR;1.0;nan;N26;Germany;EUR
+;SHELL TANKSTELLE;nan;MasterCard Payment;-;-66.41;-66.41;EUR;1.0;nan;N26;Germany;EUR
+;From Main Account to My Entertainment;nan;Outgoing Transfer;2x Round-up;-0.2;;nan;;nan;N26;Germany;EUR
+;MCDONALD S DEUTSCHLAND;nan;MasterCard Payment;-;-3.98;-3.98;EUR;1.0;nan;N26;Germany;EUR
+;DB FERNVERKEHR AG;nan;MasterCard Payment;-;-1.0;-1.0;EUR;1.0;nan;N26;Germany;EUR
+;DB GASTRONOMIE GMBH;nan;MasterCard Payment;-;-8.9;-8.9;EUR;1.0;nan;N26;Germany;EUR
+;Studentenwerk Ostniede;nan;MasterCard Payment;-;-10.0;-10.0;EUR;1.0;nan;N26;Germany;EUR
+;Timothy Mintargo Timmy;DE97100110012621584088;MoneyBeam;Koekenhof;-145.0;;nan;;nan;N26;Germany;EUR
+;From Main Account to My Entertainment;nan;Outgoing Transfer;2x Round-up;-1.0;;nan;;nan;N26;Germany;EUR
+;From Main Account to My Entertainment;nan;Outgoing Transfer;2x Round-up;-1.6;;nan;;nan;N26;Germany;EUR
+;TZ KRONBERG;nan;MasterCard Payment;-;-10.5;-10.5;EUR;1.0;nan;N26;Germany;EUR
+;TAXI ZUBER KRONBERG;nan;MasterCard Payment;-;-8.2;-8.2;EUR;1.0;nan;N26;Germany;EUR
+;From Shared entertainment to Main Account;nan;Income;Grillen sate;14.0;;nan;;nan;N26;Germany;EUR
+;Melissa Nathania;DE87100110012626753107;MoneyBeam;Photoshoot Amsterdam ;-175.0;;nan;;nan;N26;Germany;EUR
+;From Main Account to My Entertainment;nan;Outgoing Transfer;2x Round-up;-0.14;;nan;;nan;N26;Germany;EUR
+;From Main Account to My Entertainment;nan;Outgoing Transfer;2x Round-up;-1.12;;nan;;nan;N26;Germany;EUR
+;Rossmann 198;nan;MasterCard Payment;-;-27.93;-27.93;EUR;1.0;nan;N26;Germany;EUR
+;From Main Account to My Entertainment;nan;Outgoing Transfer;2x Round-up;-1.0;;nan;;nan;N26;Germany;EUR
+;SANDPASSAGE TSCHORN;nan;MasterCard Payment;-;-15.44;-15.44;EUR;1.0;nan;N26;Germany;EUR
+;LE CROBAG SHOP;nan;MasterCard Payment;-;-2.5;-2.5;EUR;1.0;nan;N26;Germany;EUR
+;COMMERZBANK 00210694>L;nan;MasterCard Payment;-;-50.0;-50.0;EUR;1.0;nan;N26;Germany;EUR
+;From Main Account to My Entertainment;nan;Outgoing Transfer;2x Round-up;-1.1;;nan;;nan;N26;Germany;EUR
+;N26;nan;Outgoing Transfer;N26 Smart Membership;-4.9;;nan;;nan;N26;Germany;EUR
+;From Main Account to My Entertainment;nan;Outgoing Transfer;2x Round-up;-1.44;;nan;;nan;N26;Germany;EUR
+;Rossmann 2194;nan;MasterCard Payment;-;-25.45;-25.45;EUR;1.0;nan;N26;Germany;EUR
+;MCDONALDS 01661;nan;MasterCard Payment;-;-8.28;-8.28;EUR;1.0;nan;N26;Germany;EUR
+;STEPHEN KURNIAWAN;DE06480400350611093600;Income;HAVE FUN;100.0;;nan;;nan;N26;Germany;EUR

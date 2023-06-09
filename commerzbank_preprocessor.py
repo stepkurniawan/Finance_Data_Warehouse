@@ -18,7 +18,7 @@ def preprocess_commerzbank_csv(input_file_path, output_file_path):
 
     # Rename columns
     df.rename(columns={
-        "Buchungstag": "Date",
+        "Buchungstag": "Timestamp",
         "Wertstellung": "Value_Date",
         "Umsatzart": "Payment_Method_Details",
         "Buchungstext": "Description",
@@ -29,8 +29,6 @@ def preprocess_commerzbank_csv(input_file_path, output_file_path):
         "IBAN Auftraggeberkonto": "Sender_IBAN"
     }, inplace=True)
 
-    # Add the "Timestamp" column
-    df["Timestamp"] = np.nan
 
     # Add the "Category" column
     # TODO: Category can be more automated based on the "Description" column using regex or something
@@ -43,7 +41,7 @@ def preprocess_commerzbank_csv(input_file_path, output_file_path):
     df["Location"] = "Germany"
 
     # Set the datatypes of each columns
-    df["Date"] = pd.to_datetime(df["Date"], format="%d.%m.%Y")
+    df["Timestamp"] = pd.to_datetime(df["Timestamp"], format="%d.%m.%Y")
     df["Value_Date"] = pd.to_datetime(df["Value_Date"], format="%d.%m.%Y")
     df["Price"] = df["Price"].str.replace(",", ".").astype(float)
     df["Currency"] = df["Currency"].astype(str)
