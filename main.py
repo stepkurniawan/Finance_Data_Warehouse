@@ -7,7 +7,7 @@ import automate_download_csv as automate_download_csv
 def main():
     spreadsheet_id = "1WQFGfcp6PW8O5s0817yAkWIr-Am_mUvgjhaNAXjSCZU"
     credentials_file = "serviceAccount-cred.json"
-    com_processed_file_path = "commerzbank.csv_preprocessed.csv"
+    com_processed_file_path = "commerzbank_preprocessed.csv"
     n26_processed_file_path = "n26_preprocessed.csv"
     com_sheet_name = "Commerz_Exp"
     redo_last_update = True

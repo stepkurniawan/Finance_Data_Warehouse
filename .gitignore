@@ -3,4 +3,8 @@ Bank/
 # ignore all json because of credentials
 *.json
 
+# ignore all csv because sensitive data
+n26_preprocessed.csv
+commerzbank_preprocessed.csv
+
 __pycache__/
