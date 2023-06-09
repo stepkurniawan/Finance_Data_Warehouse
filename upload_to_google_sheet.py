@@ -8,14 +8,8 @@ import time
 base_path = os.path.join(os.path.expanduser("~"), "OneDrive", "Project", "Finance_Data_Lake", "Bank")
 upload_tracker_file_path = os.path.join(os.path.expanduser("~"), "OneDrive", "Project", "Finance_Data_Lake", "upload_tracker.txt")
 
-def select_file_to_upload(bank_name):
-    if bank_name == "commerzbank":
-        downloads_folder = os.path.join(base_path, "Commerzbank", "Auto_Download_CSV")
-    elif bank_name == "n26":
-        downloads_folder = os.path.join(base_path, "N26", "Auto_Download_CSV")
-
-    print("The bank is " + bank_name + ".")
-    print("Selecting file to upload...")
+def select_file_to_upload(downloads_folder):
+    print("Selecting file to upload in: ", downloads_folder)
 
     # get all the files in the folder
     files = os.listdir(downloads_folder)
@@ -48,7 +42,7 @@ def update_upload_tracker(file_path):
     with open(upload_tracker_file_path, "a") as f:
         f.write(file_name + "\n")
 
-    print("Upload tracker updated!")
+    print("Upload tracker updated in ", upload_tracker_file_path, " with ", file_name, ".")
 
 def check_if_file_already_uploaded(file_path):
     # get the file name
@@ -62,8 +56,10 @@ def check_if_file_already_uploaded(file_path):
 
     # check if the file is in the list of uploaded files
     if file_name in uploaded_files:
+        print("File already uploaded.")
         return True
     else:
+        print("File not uploaded yet.")
         return False
 
     

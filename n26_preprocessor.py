@@ -13,7 +13,7 @@ import pandas as pd
 import numpy as np
 
 
-def preprocess_n26_csv(input_file_path, output_file_path):
+def preprocess_csv(input_file_path, output_file_path):
     # Read the CSV file into a DataFrame
     df = pd.read_csv(input_file_path, delimiter=",")
 
@@ -29,9 +29,6 @@ def preprocess_n26_csv(input_file_path, output_file_path):
         "Type Foreign Currency": "Currency_Code",
         "Exchange Rate": "Exchange_Rate"
     }, inplace=True)
-
-    # Add the "Timestamp" column
-    df["Timestamp"] = np.nan
 
     # Add the "Category" column
     # TODO: Category can be more automated based on the "Description" column using regex or something
@@ -61,5 +58,5 @@ def preprocess_n26_csv(input_file_path, output_file_path):
     # Save the DataFrame to a CSV file
     df.to_csv(output_file_path, index=False, sep=";")
 
-    print("Preprocessing done!")
+    print("Preprocessing done and saved to ", output_file_path, "!")
     

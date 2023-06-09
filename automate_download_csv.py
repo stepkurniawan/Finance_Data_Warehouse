@@ -25,10 +25,10 @@ base_path = os.path.join(os.path.expanduser("~"), "OneDrive", "Project", "Financ
 com_downloads_folder = os.path.join(base_path, "Commerzbank", "Auto_Download_CSV")
 n26_downloads_folder = os.path.join(base_path, "N26", "Auto_Download_CSV")
 
-def commerzbank_selenium_download_csv():  
+def commerzbank_selenium_download_csv(download_folder):  
     # Create the Downloads folder if it doesn't already exist
-    if not os.path.exists(com_downloads_folder):
-        os.makedirs(com_downloads_folder)
+    if not os.path.exists(download_folder):
+        os.makedirs(download_folder)
 
     # Set the path to the Chrome driver
     chrome_driver_path = os.path.join(os.getcwd(), "chromedriver")
@@ -42,7 +42,7 @@ def commerzbank_selenium_download_csv():
     chrome_options.add_argument("--no-sandbox")
     chrome_options.add_argument("--disable-dev-shm-usage")
     chrome_options.add_experimental_option("prefs", {
-        "download.default_directory": com_downloads_folder,
+        "download.default_directory": download_folder,
         "download.prompt_for_download": False,
         "download.directory_upgrade": True,
         "safebrowsing.enabled": True
@@ -100,10 +100,10 @@ def commerzbank_selenium_download_csv():
     driver.quit()
 
 
-def n26_selenium_download_csv():  
+def n26_selenium_download_csv(download_folder):  
     # Create the Downloads folder if it doesn't already exist
-    if not os.path.exists(com_downloads_folder):
-        os.makedirs(com_downloads_folder)
+    if not os.path.exists(download_folder):
+        os.makedirs(download_folder)
 
     # Set the path to the Chrome driver
     chrome_driver_path = os.path.join(os.getcwd(), "chromedriver")
@@ -117,7 +117,7 @@ def n26_selenium_download_csv():
     chrome_options.add_argument("--no-sandbox")
     chrome_options.add_argument("--disable-dev-shm-usage")
     chrome_options.add_experimental_option("prefs", {
-        "download.default_directory": n26_downloads_folder,
+        "download.default_directory": download_folder,
         "download.prompt_for_download": False,
         "download.directory_upgrade": True,
         "safebrowsing.enabled": True

@@ -12,7 +12,7 @@ Buchungstag	Wertstellung	Umsatzart	Buchungstext	Betrag	Währung	Auftraggeberkont
 import pandas as pd
 import numpy as np
 
-def preprocess_commerzbank_csv(input_file_path, output_file_path):
+def preprocess_csv(input_file_path, output_file_path):
     # Read the CSV file into a DataFrame
     df = pd.read_csv(input_file_path, delimiter=";")
 
@@ -70,5 +70,5 @@ def preprocess_commerzbank_csv(input_file_path, output_file_path):
 if __name__ == "__main__":
     input_file_path = "commerzbank.csv"
     output_file_path = input_file_path+"_preprocessed.csv"
-    preprocess_commerzbank_csv(input_file_path, output_file_path)
+    preprocess_csv(input_file_path, output_file_path)
 
