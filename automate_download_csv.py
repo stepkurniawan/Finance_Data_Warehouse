@@ -12,6 +12,7 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import json
+import main
 
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.chrome.options import Options
@@ -21,9 +22,10 @@ with open('config.json') as f:
     config = json.load(f)
 
 #### VARIABLES ####
-base_path = os.path.join(os.path.expanduser("~"), "OneDrive", "Project", "Finance_Data_Lake", "Bank")
-com_downloads_folder = os.path.join(base_path, "Commerzbank", "Auto_Download_CSV")
-n26_downloads_folder = os.path.join(base_path, "N26", "Auto_Download_CSV")
+com_download_folder = main.commerzbank.dir_download_csv
+n26_download_folder = main.n26.dir_download_csv
+
+######################## COMMERZBANK ########################################
 
 def commerzbank_selenium_download_csv(download_folder):  
     # Create the Downloads folder if it doesn't already exist
@@ -99,6 +101,7 @@ def commerzbank_selenium_download_csv(download_folder):
     # Close the WebDriver manually
     driver.quit()
 
+######################## N26 ########################################
 
 def n26_selenium_download_csv(download_folder):  
     # Create the Downloads folder if it doesn't already exist
@@ -182,12 +185,12 @@ def n26_selenium_download_csv(download_folder):
     rename_file_to(start_date + "_" + end_date + ".csv")
 
 
-# this function rename the file based to the input
+# this function rename the file based to the input for 
 def rename_file_to(new_name):
     # get the file path
-    file_path = os.path.join(n26_downloads_folder, 'n26-csv-transactions.csv')
+    file_path = os.path.join(n26_download_folder, 'n26-csv-transactions.csv')
     # get the new file path
-    new_file_path = os.path.join(n26_downloads_folder, new_name)
+    new_file_path = os.path.join(n26_download_folder, new_name)
     # rename the file
     try:
         os.rename(file_path, new_file_path)

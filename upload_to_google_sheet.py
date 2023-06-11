@@ -42,7 +42,7 @@ def update_upload_tracker(file_path):
     with open(upload_tracker_file_path, "a") as f:
         f.write(file_name + "\n")
 
-    print("Upload tracker updated in ", upload_tracker_file_path, " with ", file_name, ".")
+    print("Upload tracker updated added: ", file_name)
 
 def check_if_file_already_uploaded(file_path):
     # get the file name

@@ -13,9 +13,10 @@ import pandas as pd
 import numpy as np
 
 
-def preprocess_csv(input_file_path, output_file_path):
+def preprocess_csv(input_file_csv_path, output_file_path):
     # Read the CSV file into a DataFrame
-    df = pd.read_csv(input_file_path, delimiter=",")
+    print("Preprocessing ", input_file_csv_path, "...")
+    df = pd.read_csv(input_file_csv_path, delimiter=",")
 
     # Rename columns
     df.rename(columns={
