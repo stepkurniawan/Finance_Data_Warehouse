@@ -6,5 +6,6 @@ Bank/
 # ignore all csv because sensitive data
 n26_preprocessed.csv
 commerzbank_preprocessed.csv
+*.csv
 
 __pycache__/
