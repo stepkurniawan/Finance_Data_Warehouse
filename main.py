@@ -11,20 +11,24 @@ spreadsheet_id = "1WQFGfcp6PW8O5s0817yAkWIr-Am_mUvgjhaNAXjSCZU"
 credentials_file = "serviceAccount-cred.json"
 skip_check_and_directly_upload = False
 base_path = os.path.join(os.path.expanduser("~"), "OneDrive", "Project", "Finance_Data_Lake", "Bank")
+com_dir_download_csv = os.path.join(base_path, "Commerzbank", "Auto_Download_CSV")
+n26_dir_download_csv = os.path.join(base_path, "N26", "Auto_Download_CSV")
 
 commerzbank = Bank(name="commerzbank", 
                     preprocessor=com_preprocessor ,
-                    selenium_download_csv=lambda: automate_download_csv.commerzbank_selenium_download_csv(dir_download_csv),
+                    selenium_download_csv=lambda: automate_download_csv.commerzbank_selenium_download_csv(com_dir_download_csv),
                     google_sheet_name="commerzbank_Exp", 
                     processed_file_path="commerzbank_preprocessed.csv", 
-                    dir_download_csv=os.path.join(base_path, "Commerzbank", "Auto_Download_CSV"))
+                    dir_download_csv=com_dir_download_csv
+)
 
 n26 = Bank(name="n26",
             preprocessor=n26_preprocessor,
-            selenium_download_csv=lambda: automate_download_csv.n26_selenium_download_csv(dir_download_csv),
+            selenium_download_csv=lambda: automate_download_csv.n26_selenium_download_csv(n26_dir_download_csv),
             google_sheet_name="n26_Exp",
             processed_file_path="n26_preprocessed.csv",
-            dir_download_csv=os.path.join(base_path, "N26", "Auto_Download_CSV"))
+            dir_download_csv=n26_dir_download_csv
+            )
 
 def main():
     Banks = [commerzbank, n26]
@@ -33,7 +37,7 @@ def main():
         print("Starting upload pipeline for ", bank.name)
 
         # download csv from the bank website
-        bank.selenium_download_csv
+        bank.selenium_download_csv()
 
         # find the most recent file
         file_to_upload = upload.select_file_to_upload(bank.dir_download_csv)

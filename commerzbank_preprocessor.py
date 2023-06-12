@@ -59,7 +59,7 @@ def preprocess_csv(input_file_path, output_file_path):
 
 
     #### Filter the data frame, leaving the unnecessary columns behind
-    df_filtered = df[["Date", "Description", "Price", "Category", "Payment_Method", "Location", "Currency"]]
+    df_filtered = df[["Timestamp", "Description", "Price", "Category", "Payment_Method", "Location", "Currency"]]
 
     # remove the rows when the "Price" column is positive (it means income)
     df_filtered = df_filtered[df_filtered["Price"] < 0]

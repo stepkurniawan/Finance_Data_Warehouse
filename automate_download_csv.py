@@ -37,7 +37,7 @@ def commerzbank_selenium_download_csv(download_folder):
 
     # Set the options for the Chrome driver
     chrome_options = Options()
-    chrome_options.add_argument("--headless")
+    # chrome_options.add_argument("--headless")
     chrome_options.add_argument("--window-size=1920x1080")
     chrome_options.add_argument("--disable-gpu")
     chrome_options.add_argument("--disable-extensions")
