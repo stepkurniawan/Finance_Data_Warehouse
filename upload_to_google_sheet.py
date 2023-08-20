@@ -21,7 +21,6 @@ def select_file_to_upload(downloads_folder):
     try:        
         sorted_files = sorted(files, key=lambda x: os.path.getmtime(os.path.join(downloads_folder, x)), reverse=True)
     except OSError as e:
-        #TODO STILL Wrong!
         print(f"Error occurred while sorting files: {e}")
         return None
         

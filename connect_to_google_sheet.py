@@ -1,5 +1,5 @@
 import gspread
-from oauth2client.service_account import ServiceAccountCredentials
+from oauth2client.service_account import ServiceAccountCredentials # pip install oauth2client
 
 def connect_to_google_sheet_and_get_sheet(spreadsheet_id, sheet_name, credentials_file):
     # Connect to Google Sheets using service account credentials

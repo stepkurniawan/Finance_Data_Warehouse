@@ -32,6 +32,7 @@ n26 = Bank(name="n26",
 
 def main():
     Banks = [commerzbank, n26]
+    # Banks = [n26]
 
     for bank in Banks:
         print("Starting upload pipeline for ", bank.name)

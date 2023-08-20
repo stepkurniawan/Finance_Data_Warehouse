@@ -151,9 +151,7 @@ def n26_selenium_download_csv(download_folder):
     # Wait for the page to load and user to enter the TAN
     time.sleep(25)
 
-    #click download csv button
-    csv_download_button = driver.find_element(By.CSS_SELECTOR, '[aria-labelledby="downloads-quick-action"]')
-    csv_download_button.click()
+    driver.get("https://app.n26.com/downloads")
 
     time.sleep(2)
 

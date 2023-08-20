@@ -56,8 +56,6 @@ def preprocess_csv(input_file_path, output_file_path):
     df["Location"] = df["Location"].astype(str)
 
     
-
-
     #### Filter the data frame, leaving the unnecessary columns behind
     df_filtered = df[["Timestamp", "Description", "Price", "Category", "Payment_Method", "Location", "Currency"]]
 
